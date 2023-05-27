@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/vendors/line-awesome/css/line-awesome.min.css" rel="stylesheet" />
+    <link href="assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
+    <link href="assets/vendors/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="assets/vendors/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="assets/vendors/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- PLUGINS STYLES-->
+    <link href="assets/vendors/morris.js/morris.css" rel="stylesheet" />
+    <!-- THEME STYLES-->
+    <link href="assets/css/main.min copy.css" rel="stylesheet" />
+    <style>
+        .blue-underline {
+            border-bottom: 2px solid blue;
+        }
+        .about-content {
+            width: 370px;
+            background-color: #F9FAFF;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-left:40px !important;
+            border-radius:26px
+        }
+
+        .ftr-games{
+            display: inline-block;
+            position: relative;
+            max-width: 205px;
+            width: 100%;
+        }
+        .ftr-games:hover{
+            width: 205px;
+            border: 5px solid black;
+            border-radius: 26px;
+        }
+
+        .ftr-games img{
+            border-radius: 26px;
+            max-width: 205px;
+            width: 270px;
+            width: 100%;
+            z-index: 1;
+            
+        }
+        .ftr-games img:hover{
+            width: 100%;
+            filter: blur(10px);
+        }
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .hover-text img{
+            margin-bottom: 20px;
+            margin-top: 20px;
+            width: 40px;
+            height: auto;
+        }
+
+        .hover-text h4{
+            margin-top: 50px;
+            width: 150px;
+            word-wrap: break-word;
+            position: relative;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .hover-text p{
+            width: 150px;
+            position: relative;
+        }
+        .hover-text.show {
+            opacity: 1;
+        }
+        .vertical-line {
+            width: 1px;
+            background-color: #E7EAF5;
+            margin: 0 10px;
+        }
+        .stats h2{
+            font-weight: 700;
+            font-size: 35px;
+            
+        }
+        .stats p{
+            font-weight: 400;
+            color: #7E8CAC;
+        }
+        .cover{
+            left: 50%;
+            top: 50%;
+        }
+        .cover h2{
+            font-weight: 800;
+            font-size: 40px;
+            text-align: start;
+            margin-bottom: 20px;
+        }
+        .cover p{
+            max-width: 450px;
+            font-size: 25px;
+            text-align: start;
+            margin-bottom: 20px;
+        }
+        .cover .btn-cover{
+            width: 250px;
+            height: 50px;
+            font-size: 18px;
+        }
+        .page-footer{
+            position: absolute ;
+            background-color: #F9FAFF;
+            background-clip: padding-box;
+        }
+        .page-footer .p1{
+            margin-top: 30px;
+            max-width: 230px;
+        }
+        .page-footer h2{
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .page-footer a{
+            line-height: 2;
+        }
+
+        .page-footer a:hover{
+            color: #4D17E2;
+            text-decoration: underline;
+        }
+        .page-wrapper{
+            max-width: 1300px;
+        }
+        @media (max-width:426px) {
+            .page-wrapper{
+                max-width: 400px;
+                width: 100%;
+            }
+            .page-content{
+                max-width: 400px;
+            }
+            .page-wrapper .header .right-nav{
+                display: none;
+            }
+
+            .page-wrapper .content-wrapper .banner-img{
+                display: none;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body class="d-flex justify-content-center">
+    <div class="page-wrapper">
+        <!-- START HEADER-->
+        <header class="header">
+            <div class="flexbox flex-1 ">
+                <!-- START TOP-LEFT TOOLBAR-->
+                <ul class="nav navbar-toolbar ml-4 left-nav">
+                    <img src="/slicing/assets/img/logos/logo.png" alt="" class="" style="width: 50px;height:auto;">
+                </ul>
+                <!-- END TOP-LEFT TOOLBAR-->
+                <!-- START TOP-RIGHT TOOLBAR-->
+                <ul class="nav navbar-toolbar justify-content-start mr-5 right-nav">
+                    <li>
+                        <a class="nav-link font-strong active" style="color: #0C145A;">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link font-strong">
+                            Games
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link font-strong">
+                            Rewards
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link font-strong">
+                            Discover
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link font-strong">
+                            Global Rank
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link font-strong">
+                            <button class="btn btn-secondary btn-rounded">
+                                Sign In
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+                <!-- END TOP-RIGHT TOOLBAR-->
+            </div>
+        </header>
+        <!-- END HEADER-->
+        <div class="content-wrapper ml-0 d-flex">
+            <!-- START PAGE CONTENT-->
+            <div class="page-content fade-in-up">
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="ibox mb-6 first">
+                            <div class="ibox-body">
+                                <div class="d-flex justify-content-between mb-4">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <p class="m-0">Halo gamers,</p>
+                                        <h3 class="mb-5" style="max-width: 500px;font-size:40px;font-weight:800;">Topup & Get a <span class="blue-underline">New Experience</span>  in Gaming</h3>
+                                        <p style="max-width: 400px;">Kami menyediakan jutaan cara untuk membantu players menjadi pemenang sejati</p>
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <a class="nav-link font-strong">
+                                                <button class="btn btn-rounded" style="width: 150px;background-color:#4D17E2;color:#ffffff">
+                                                    Sign In
+                                                </button>
+                                            </a>
+                                            <a class="nav-link font-strong">
+                                                <u>Learn More</u>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img class="banner-img"src="/slicing/assets/img/products/banner_image.png" alt="banner1" >
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="ibox mb-6">
+                            <div class="ibox-body">
+                                <div class="d-flex flex-column justify-content-between mb-4 align-items-center">
+                                    <div class="d-flex justify-content-center flex-column align-items-center" style="margin-bottom:30px ;">
+                                        <h3 class="" style="max-width: 500px;font-size:40px;font-weight:800;">It's Really That</h3>
+                                        <h3 class="mb-5" style="max-width: 500px;font-size:40px;font-weight:800;">Easy to Win the Game</h3>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center" style="width: 100% ;">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="about-content p-5">
+                                                <img class="" src="/slicing/assets/img/logos/icon.png" alt="" style="margin-bottom: 30px;">
+                                                <h4 class="" style="font-weight: 600;margin-bottom: 30px;">1. Start</h4>
+                                                <p style="max-width: 250px;font-size:20px">Pilih salah satu game yang ingin kamu top up</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="about-content p-5">
+                                                <img class="" src="/slicing/assets/img/logos/icon-1.png" alt="" style="margin-bottom: 30px;">
+                                                <h4 class="" style="font-weight: 600;margin-bottom: 30px;">2. Fill Up</h4>
+                                                <p style="max-width: 250px;font-size:20px">Top up sesuai dengan nominal yang tersedia</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="about-content p-5">
+                                                <img class="" src="/slicing/assets/img/logos/icon-2.png" alt="" style="margin-bottom: 30px;">
+                                                <h4 class="" style="font-weight: 600;margin-bottom: 30px;">3. Be a Winner</h4>
+                                                <p style="max-width: 270px;font-size:20px">Siap digunakan untuk improve permainan kamu</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="ibox mb-6">
+                            <div class="ibox-body">
+                                <div class="d-flex justify-content-between mb-4">
+                                    <div class="d-flex flex-column justify-content-center w-100">
+                                        <h3 class="mb-5" style="max-width: 400px;font-size:40px;font-weight:800;line-height:1.5;">Our Featured Games This Year</h3>
+                                        <div class="d-flex justify-content-between align-items-center w-100">
+                                            <div class="ftr-games">
+                                                <img class="ftr-image" src="/slicing/assets/img/logos/item.png" alt="">
+                                                <div class="hover-text d-flex justify-content-between flex-column align-items-center">
+                                                    <img src="/slicing/assets/img/icons/ic_play.png" alt="">
+                                                    <h4 class="text-start">Call Of Duty: Modern</h4>
+                                                    <p class="text-start">Mobile</p>
+                                                </div>
+                                            </div>
+                                            <div class="ftr-games">
+                                                <img class="ftr-image" src="/slicing/assets/img/logos/image15.png  " alt="">
+                                                <div class="hover-text d-flex justify-content-between flex-column align-items-center">
+                                                    <img src="/slicing/assets/img/icons/ic_play.png" alt="">
+                                                    <h4 class="text-start">Call Of Duty: Modern</h4>
+                                                    <p class="text-start">Mobile</p>
+                                                </div>
+                                            </div>
+                                            <div class="ftr-games">
+                                                <img class="ftr-image" src="/slicing/assets/img/logos/item-2.png" alt="">
+                                                <div class="hover-text d-flex justify-content-between flex-column align-items-center">
+                                                    <img src="/slicing/assets/img/icons/ic_play.png" alt="">
+                                                    <h4 class="text-start">Call Of Duty: Modern</h4>
+                                                    <p class="text-start">Mobile</p>
+                                                </div>
+                                            </div>
+                                            <div class="ftr-games">
+                                                <img class="ftr-image" src="/slicing/assets/img/logos/item-3.png" alt="">
+                                                <div class="hover-text d-flex justify-content-between flex-column align-items-center">
+                                                    <img src="/slicing/assets/img/icons/ic_play.png" alt="">
+                                                    <h4 class="text-start">Clash of Clans</h4>
+                                                    <p class="text-start">Mobile</p>
+                                            </div>
+                                            </div>
+                                            <div class="ftr-games">
+                                                <img class="ftr-image" src="/slicing/assets/img/logos/item-1.png" alt="">
+                                                <div class="hover-text d-flex justify-content-between flex-column align-items-center">
+                                                    <img src="/slicing/assets/img/icons/ic_play.png" alt="">
+                                                    <h4 class="text-start">Mobile Legends : Bang Bang</h4>
+                                                    <p class="text-start">Mobile</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="ibox mb-6">
+                            <div class="ibox-body">
+                                <div class="d-flex justify-content-center mb-4 w-100">
+                                    <div class="d-flex justify-content-between w-100 stats" style="max-width: 1000px;">
+                                        <div>
+                                            <h2>290M+</h2>
+                                            <p>Players Top Up</p>
+                                        </div>
+                                        <div class="vertical-line"></div>
+                                        <div>
+                                            <h2>12.500</h2>
+                                            <p>Games Available</p>
+                                        </div>
+                                        <div class="vertical-line"></div>
+                                        <div>
+                                            <h2>99.9%</h2>
+                                            <p>Happy Players</p>
+                                        </div>
+                                        <div class="vertical-line"></div>
+                                        <div>
+                                            <h2>4.7</h2>
+                                            <p>Rating Worldwide</p>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="ibox" style="margin-bottom: 200px;">
+                            <div class="ibox-body">
+                                <div class="d-flex justify-content-between mb-4 align-items-center cover">
+                                    <div>
+                                        <img src="/slicing/assets/img/products/cover.png" alt="">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-between align-items-start top-0">
+                                        <h2>Win the battle.</h2>
+                                        <h2>Be the champion.</h2>
+                                        <p>Kami menyediakan jutaan cara untuk membantu players menjadi pemenang sejati</p>
+                                        <button class="btn btn-secondary btn-rounded btn-cover">
+                                            Read Story
+                                        </button>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT-->
+            <div class="page-footer d-flex justify-content-between align-items-start p-5">
+                <div class="d-flex justify-content-between flex-column h-auto">
+                    <img src="/slicing/assets/img/logos/logo.png" alt="logo" style="width: 50px; height:auto;">
+                    <p class="font-12 p1">StoreGG membantu gamers untuk menjadi pemenang sejati</p>
+                    <p class="font-12">Copyright 2021. All Rights Reserved</p>
+                </div>
+                <div class="d-flex justify-content-between flex-column h-auto">
+                    <h2>Company</h2>
+                    <a href="" class="font-12 p1">About Us</a>
+                    <a href="" class="font-12">Press Release</a>
+                    <a href="" class="font-12">Terms of Use</a>
+                    <a href="" class="font-12">Privacy & Policy</a>
+                </div>
+                <div class="d-flex justify-content-between flex-column h-auto">
+                    <h2>Support</h2>
+                    <a href="" class="font-12 p1">Refund Policy</a>
+                    <a href="" class="font-12">Unlock Rewards</a>
+                    <a href="" class="font-12">Live Chatting</a>
+                </div>
+                <div class="d-flex justify-content-between flex-column h-auto">
+                    <h2>Connect</h2>
+                    <a class="font-12 p1">hi@store.gg</a>
+                    <a class="font-12">team@store.gg</a>
+                    <a class="font-12">Pacific 12, Jakarta Selatan</a>
+                    <a class="font-12">021 - 1122 - 9090</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CORE PLUGINS-->
+    <script src="assets/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/vendors/jquery-idletimer/dist/idle-timer.min.js"></script>
+    <script src="assets/vendors/toastr/toastr.min.js"></script>
+    <script src="assets/vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <!-- PAGE LEVEL PLUGINS-->
+    <script src="assets/vendors/chart.js/dist/Chart.min.js"></script>
+    <script src="assets/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <!-- CORE SCRIPTS-->
+    <script src="assets/js/app.min.js"></script>
+    <!-- PAGE LEVEL SCRIPTS-->
+    <script src="assets/js/scripts/dashboard_4.js"></script>
+    <script>
+        const images = document.querySelectorAll('.ftr-image');
+        const hoverTexts = document.querySelectorAll('.hover-text');
+
+        images.forEach((image, index) => {
+            image.addEventListener('mouseenter', () => {
+                hoverTexts[index].classList.add('show');
+            });
+
+            image.addEventListener('mouseleave', () => {
+                hoverTexts[index].classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>

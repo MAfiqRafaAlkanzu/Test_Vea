@@ -1,0 +1,60 @@
+/* logo */
+
+position: absolute;
+width: 60px;
+height: 60px;
+left: 120px;
+top: 40px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 60px;
+height: 60px;
+left: 120px;
+top: 40px;
+
+background: #3546AB;
+
+
+/* Ellipse 3 */
+
+position: absolute;
+width: 60px;
+height: 60px;
+left: 120px;
+top: 40px;
+
+background: #00BAFF;
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 67.88px;
+height: 74.6px;
+left: 131.62px;
+top: 25.9px;
+
+background: #4D17E2;
+
+
+/* S */
+
+position: absolute;
+width: 60px;
+height: 158px;
+left: 120px;
+top: -9px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 105px;
+line-height: 158px;
+/* identical to box height */
+
+color: #FFFFFF;
+
